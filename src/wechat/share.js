@@ -10,8 +10,13 @@ class App extends Component {
 	}
   render() {
     return (
-      <div className="App">
-        
+      <div className="container">
+        <div className="wrap">
+        <div class="topImg">
+          <img src={require("../../../assets/img/shareAct/itrTop1.png")} />
+          <div>活动规则</div>
+        </div>
+        </div>
       </div>
     );
   }
