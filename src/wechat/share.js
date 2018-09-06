@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <div className="container">
         <div className="wrap">
-        <div class="topImg">
-          <img src={require("../../../assets/img/shareAct/itrTop1.png")} />
+        <div className="topImg">
+          <img src={require("./img/itrTop1.png")} />
           <div>活动规则</div>
         </div>
         </div>
