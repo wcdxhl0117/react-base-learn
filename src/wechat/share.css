@@ -1,9 +1,13 @@
-.App{
+body{
     width: 100%;
-    height: auto;
-    background: #999999;
+    height: 100%;
 }
-.App img{
+.container{
+    width: 100%;
+    height: 100%;
+    background: #F9573F;
+}
+.container .wrap img{
     width: 100%;
     height: auto;
 }
