@@ -1,0 +1,43 @@
+.rule{
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  .popContent{
+    font-size: 0.3rem;
+    color: #333;
+    width: 4.9rem;
+    height: 6rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0.4rem;
+    .paragraph{
+      display: flex;
+      line-height: 0.46rem;
+    }
+    .btn{
+      margin: 0 auto;
+      margin-top: 0.4rem;
+      width: 3.6rem;
+      height: 0.7rem;
+      line-height: 0.7rem;
+      text-align: center;
+      background: #007AFF;
+      color: #fff;
+      font-weight: 900;
+      border-radius: 0.1rem;
+    }
+  }
+}
+.showRule{
+  display: block !important;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './rule.css'
+import './rule.scss'
 
 class App extends Component {
 	constructor(props) {
