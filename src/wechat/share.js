@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './share.css'
 import Rule from './compentents/rule'
+import axios from 'axios'
 
 class App extends Component {
 	constructor(props) {
@@ -28,7 +29,7 @@ class App extends Component {
 					<div className="topImg">
 						<img src={require("./img/1.png")} />
 					</div>
-					<img className="btmImg" src={require("./img/2.jpg")} />
+					<img onClick={this.goDetail.bind(this)} className="btmImg" src={require("./img/2.jpg")} />
 				</div>
 
         {/* 规则 */}
@@ -42,6 +43,18 @@ class App extends Component {
       ruleShow: !this.state.ruleShow
     });
   }
+	goDetail () {
+		//  判断是否参加
+		// /wx/giveMemberActivity/parent/parentInfo
+		// http://yoocorrect.test1.yoomath.com
+		axios.get('http://yoocorrect.test1.yoomath.com/api/ycorrect/user/login?username=秋天&password=654321')
+      .then( (response)=> {
+				console.log(response)
+			})
+      .catch(function (error) {
+          console.log(error);
+      })
+	}
 }
 
 export default App;
