@@ -18,3 +18,19 @@
   right: 0.3rem;
   color: #916414;
 }
+#content{
+  width: 6.1rem;
+  height: auto;
+  margin: 0 auto;
+}
+#content .topImg, #content .topImg img{
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.btmImg{
+  width: 100%;
+  height: auto;
+  margin-top: .4rem;
+}
