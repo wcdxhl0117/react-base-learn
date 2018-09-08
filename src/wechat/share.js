@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './share.css'
+import './share.scss'
 import Rule from './compentents/rule'
 import axios from 'axios'
 

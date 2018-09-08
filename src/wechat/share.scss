@@ -22,12 +22,18 @@
   width: 6.1rem;
   height: auto;
   margin: 0 auto;
-}
-#content .topImg, #content .topImg img{
-  width: 90%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  .topImg{
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    img{
+      width: 90%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
 }
 .btmImg{
   width: 100%;
