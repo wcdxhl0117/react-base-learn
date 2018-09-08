@@ -18,8 +18,8 @@
     "sass-loader": "^7.1.0"
   },
   "proxy":{
-   "/api":{
-      "target":"http://yoocorrect.test1.yoomath.com/",
+   "/":{
+      "target":"http://yoocorrect.test1.yoomath.com/api/",
       "changeOrigin": true
     }
   }
