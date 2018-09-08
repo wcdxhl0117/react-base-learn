@@ -7,6 +7,16 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <title>悠数学</title>
+    <script type="text/javascript">
+    (function () {
+      var html = document.documentElement;
+      function onWindowResize() {
+          html.style.fontSize = html.getBoundingClientRect().width / 7.5 + 'px';
+      }
+      window.addEventListener('resize', onWindowResize);
+      onWindowResize();
+    })();
+    </script>
   </head>
   <body>
     <noscript>

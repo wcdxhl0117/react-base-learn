@@ -5,19 +5,19 @@ class App extends Component {
 	constructor(props) {
 	  super(props);
 		this.state = {
-			
+
 		}
 	}
   render() {
     return (
-      <div className="rule">
-        这里是规则
+      <div className={ `rule ${this.props.show?'showRule':''}` }>
+        {  }
       </div>
     );
   }
 
   showRule () {
-    
+
   }
 }
 
