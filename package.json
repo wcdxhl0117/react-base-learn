@@ -19,7 +19,7 @@
   },
   "proxy":{
    "/":{
-      "target":"http://yoocorrect.test1.yoomath.com/api/",
+      "target":"http://yoocorrect.yoomath.com/api/",
       "changeOrigin": true
     }
   }

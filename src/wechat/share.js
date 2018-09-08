@@ -47,7 +47,7 @@ class App extends Component {
 		//  判断是否参加
 		// /wx/giveMemberActivity/parent/parentInfo
 		// http://yoocorrect.test1.yoomath.com
-		axios.get('/ycorrect/user/login?username=秋天&password=654321')
+		axios.get('/ycorrect/user/login?username=七八九九&password=123456')
       .then( (response)=> {
 				console.log(response)
 			})
