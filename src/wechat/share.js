@@ -31,7 +31,13 @@ class App extends Component {
 					</div>
 					<img onClick={this.goDetail.bind(this)} className="btmImg" src={require("./img/2.jpg")} />
 				</div>
-
+				{/* 上拉组建 */}
+		    <div className="btmWrap">
+		        <div className="topTitle">此活动必须父母才能领取</div>
+		        <div id="toParent" className="comBtn">微信分享给父母，进行解锁领取</div>
+		        <div id="toQQ" className="comBtn">QQ分享给父母，进行解锁领取</div>
+		        <div id="toStu" className="comBtn">将好消息告诉其他同学</div>
+		    </div>
         {/* 规则 */}
         <Rule hideRule={this.showRule.bind(this)} show={this.state.ruleShow} />
       </div>

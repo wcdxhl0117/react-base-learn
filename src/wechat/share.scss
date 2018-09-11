@@ -40,3 +40,50 @@
   height: auto;
   margin-top: .4rem;
 }
+.btmWrap{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 0.3rem;
+    width: 100%;
+    // max-height: 516rem;
+    height: 2.36rem;
+    background: #ffffff;
+    border-top-left-radius: 0.20rem;
+    border-top-right-radius: 0.20rem;
+    padding-top: 0.10rem;
+    .comBtn{
+        margin: 0.30rem auto;
+        height: 0.96rem;
+        line-height: 1.00rem;
+        width: 6.90rem;
+        border: 2rem solid #999999;
+        color: #999999;
+        text-align: center;
+        border-radius: 0.10rem;
+        font-size: 0.34rem;
+    }
+    #toParent{
+        height: 1.00rem;
+        line-height: 1.00rem;
+        background: #3BD512;
+        color: #ffffff;
+        border: none;
+    }
+    .topTitle{
+      height: 0.76rem;
+      line-height: 0.96rem;
+      font-size: 0.30rem;
+      color: #000;
+      font-weight: 900;
+      text-align: center;
+    }
+    .tip{
+      width: 100%;
+      height: 0.40rem;
+      line-height: 0.40rem;
+      text-align: center;
+      font-size: 0.30rem;
+      color: #999999;
+    }
+}
