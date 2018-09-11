@@ -88,9 +88,9 @@ class App extends Component {
 	// onTouchMove
 	Tmove (e) {
 		const touch = e.touches[0]
+		{ /* 笔记本键盘真是特别难用，特别是在使用数字真是别不爽 */ }
 		this.setState({
 			moveY: touch.pageY,
-			{/* 笔记本键盘真是特别难用，特别是在使用数字真是别不爽 */}
 			moveLong: this.state.startY - this.state.moveY
 		})
 		let AllH = this.state.startY - this.state.moveY + this.state.initH
