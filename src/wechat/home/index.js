@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import './share.scss'
-import Rule from './compentents/rule'
-import axios from 'axios'
+import './style.js';
+import Rule from '../compentents/rule';
+import axios from 'axios';
+import {
+	HomeWrapper
+} from './style';
 
-class App extends Component {
+class Share extends Component {
 	constructor(props) {
 	  super(props);
 		this.state = {
@@ -18,42 +21,44 @@ class App extends Component {
 	}
   render() {
     return (
-      <div className="container">
-        <div className="wrap">
-					{/* top--img */}
-          <div className="topImg">
-            <img src={require("./img/itrTop1.png")} alt='' />
-            <div
-							className="rulePop"
-							onClick={this.showRule.bind(this)}
-						>活动规则</div>
-          </div>
-        </div>
+			<HomeWrapper>
+	      <div className="container">
+	        <div className="wrap">
+						{/* top--img */}
+	          <div className="topImg">
+	            <img src={require("../img/itrTop1.png")} alt='' />
+	            <div
+								className="rulePop"
+								onClick={this.showRule.bind(this)}
+							>活动规则</div>
+	          </div>
+	        </div>
 
-				{/* btm 结构 */}
-				<div id="content">
-					<div className="topImg">
-						<img src={require("./img/1.png")} alt='' />
+					{/* btm 结构 */}
+					<div id="content">
+						<div className="topImg">
+							<img src={require("../img/1.png")} alt='' />
+						</div>
+						<img onClick={this.goDetail.bind(this)} className="btmImg" src={require("../img/2.jpg")} alt='' />
 					</div>
-					<img onClick={this.goDetail.bind(this)} className="btmImg" src={require("./img/2.jpg")} alt='' />
-				</div>
-				{/* 上拉组建 */}
-		    <div className="btmWrap"
-					ref={this.btmWrap}
-					onTouchStart={this.Tstart.bind(this)}
-					onTouchMove={this.Tmove.bind(this)}
-					onTouchEnd={this.Tend.bind(this)}
-				>
-		        <div className="topTitle">此活动必须父母才能领取</div>
-		        <div id="toParent" className="comBtn">微信分享给父母，进行解锁领取</div>
-		        <div id="toQQ" className="comBtn">QQ分享给父母，进行解锁领取</div>
-		        <div id="toStu" className="comBtn">将好消息告诉其他同学</div>
-		    </div>
-				<div ref="minH" className="minH"></div>
-		    <div ref="maxH" className="maxH"></div>
-        {/* 规则 */}
-        <Rule hideRule={this.showRule.bind(this)} show={this.state.ruleShow} />
-      </div>
+					{/* 上拉组建 */}
+			    <div className="btmWrap"
+						ref={this.btmWrap}
+						onTouchStart={this.Tstart.bind(this)}
+						onTouchMove={this.Tmove.bind(this)}
+						onTouchEnd={this.Tend.bind(this)}
+					>
+			        <div className="topTitle">此活动必须父母才能领取</div>
+			        <div id="toParent" className="comBtn">微信分享给父母，进行解锁领取</div>
+			        <div id="toQQ" className="comBtn">QQ分享给父母，进行解锁领取</div>
+			        <div id="toStu" className="comBtn">将好消息告诉其他同学</div>
+			    </div>
+					<div ref="minH" className="minH"></div>
+			    <div ref="maxH" className="maxH"></div>
+	        {/* 规则 */}
+	        <Rule hideRule={this.showRule.bind(this)} show={this.state.ruleShow} />
+	      </div>
+			</HomeWrapper>
     );
   }
 
@@ -67,7 +72,7 @@ class App extends Component {
 		// /wx/giveMemberActivity/parent/parentInfo
 		// http://yoocorrect.test1.yoomath.com
 		axios.get('/ycorrect/user/login?username=七八九九&password=123456')
-      .then( (response)=> {
+      .then((response)=> {
 				console.log(response)
 			})
       .catch(function (error) {
@@ -117,4 +122,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default Share;
