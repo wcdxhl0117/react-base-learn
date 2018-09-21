@@ -5,14 +5,12 @@ import {
 } from './style';
 
 {/* 方格组件 */}
-class Square extends React.Component {
-  render() {
-    return (
-      <button className="square" onClick={() => this.props.onClick({value: 'X'})}>
-        {this.props.value}
-      </button>
-    );
-  }
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
 {/* 棋盘组件 */}
 class Board extends React.Component {
@@ -20,6 +18,7 @@ class Board extends React.Component {
     super();
     this.state = {
       squares: Array(9).fill(null),
+			xIsNext: true
     };
   }
   renderSquare(i) {
@@ -29,7 +28,13 @@ class Board extends React.Component {
 		/>;
   }
   render() {
-    const status = 'Next player: X';
+		const winner = calculateWinner(this.state.squares);
+    let status;
+    if (winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    }
     return (
       <div>
         <div className="status">{status}</div>
@@ -52,9 +57,15 @@ class Board extends React.Component {
     );
   }
 	handleClick(i) {
-    const squares = this.state.squares.slice();
-    squares[i] = 'X';
-    this.setState({squares: squares});
+		const squares = this.state.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares: squares,
+      xIsNext: !this.state.xIsNext,
+    });
   }
 }
 {/* 游戏组件 */}
