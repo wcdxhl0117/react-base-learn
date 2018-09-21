@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
 
   .status {
     margin-bottom: 10px;
+    font-size: 0.2rem;
   }
 
   .square {
@@ -50,6 +51,7 @@ export const Wrapper = styled.div`
   .game {
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 
   .game-info {
