@@ -51,6 +51,11 @@ class Board extends React.Component {
       </div>
     );
   }
+	handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    this.setState({squares: squares});
+  }
 }
 {/* 游戏组件 */}
 class Game extends React.Component {
