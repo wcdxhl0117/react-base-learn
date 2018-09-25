@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.js';
+// 注释提交下,看github会不会变化
 import {
 	Wrapper
 } from './style';
