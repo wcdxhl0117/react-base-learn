@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './style.js';
-// 再试下
 import {
 	Wrapper
 } from './style';
