@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './wechat/login/'
 import Shore from './wechat/home/'
 import Doc from './doc-learn/'
+import store from './store/'
 
 class App extends Component {
 	constructor(props) {
