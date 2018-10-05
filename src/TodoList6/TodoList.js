@@ -42,8 +42,18 @@ import './style.css'
 	深入了解虚拟DOM
 
 		> render里的jsx首先被变成虚拟dom,就是对象,然后在被转换为真实dom
-		> react的虚拟dom写法(render里面渲染div新写法): 
+		> react的虚拟dom写法(render里面渲染div写法,非jsx,一般用jsx是为了方便): 
 			return React.createElement('div', {}, 'item')  <=> return (<div>item</div>)
+		> 虚拟dom好处总结:
+			1.性能大幅提升
+			2.使得跨端应用得以实现,react-native,原生应用可没有dom概念,js对象的虚拟dom能在原生识别,可以用虚拟dom在原生生成原生的组件
+*/
+
+/*
+	虚拟DOM中的Diff算法
+		> 
+		> 
+		> 
 */
 
 class TodoList extends Component {
