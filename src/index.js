@@ -9,9 +9,9 @@ import ReactDOM from 'react-dom';
 // 第4个,Proptypes与DefaultProps
 // import TodoList from './TodoList4_canshujiaoyan/TodoList';
 // 第5个,Props,State与render的关系
-import TodoList from './TodoList5/TodoList';
+// import TodoList from './TodoList5/TodoList';
 // 第6个,虚拟dom,
-import TodoList from './TodoList5/TodoList';
+import TodoList from './TodoList6/TodoList';
 
 
 

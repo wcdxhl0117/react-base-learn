@@ -27,10 +27,10 @@ import './style.css'
 	方法三(react的方式):
 		1.定义state数据
 		2.有一个模板,对应react中render的jsx
-		3.把数据和模板相结合,生成真实DOM,来显示
+		3.生成虚拟DOM(虚拟DOM就是一个js对象,用来描述真是DOM)
+		4.把数据和模板相结合,生成真实DOM,来显示
 			真实:<div id='abc'><span>hello word</span></div>
 			虚拟:['div',{id: 'abc'}, ['span, {}, 'hello world']]
-		4.生成虚拟DOM(虚拟DOM就是一个js对象,用来描述真是DOM)
 		5.state发生变化
 		6.生成新的虚拟DOM   ['div',{id: 'abc'}, ['span, {}, 'ha ha']]
 		7.比较原始虚拟dom和新的虚拟dom的区别,找到区别是span内容
@@ -38,6 +38,13 @@ import './style.css'
 		优点:js创建一个js对象很简单,但是创建一个dom的性能损耗是比较大的
 */
 
+/*
+	深入了解虚拟DOM
+
+		> render里的jsx首先被变成虚拟dom,就是对象,然后在被转换为真实dom
+		> react的虚拟dom写法(render里面渲染div新写法): 
+			return React.createElement('div', {}, 'item')  <=> return (<div>item</div>)
+*/
 
 class TodoList extends Component {
 	constructor(props) {
