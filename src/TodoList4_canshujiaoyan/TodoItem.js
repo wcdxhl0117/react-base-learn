@@ -30,5 +30,9 @@ TodoItem.propTypes = {
 	deleteItem: PropTypes.func,
 	index: PropTypes.number
 }
+// 定义props的默认值
+TodoItem.defaultProps = {
+	test: 'hello world'
+}
 
 export default TodoItem;
