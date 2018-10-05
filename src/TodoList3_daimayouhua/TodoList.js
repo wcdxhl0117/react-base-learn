@@ -1,18 +1,20 @@
 import React, { Component, Fragment } from 'react';
-//// 引入一个不被显示的包裹元素---Fragment占位符
-
+import TodoItem from './TodoItem'
+//// 样式引入放最下面
 import './style.css'
 
+// 将组件拆分为两部分,首先是上面的输入框和按钮为一个组件,然后下面的每一项为一个组件
 class TodoList extends Component {
-	// react组件中最优先执行的函数
 	constructor(props) {
-		//// 继承执行下父级的构造函数
 		super(props)
-		//// react定义数据需要定义在状态里面,react状态在this.state中
 		this.state = {
 			inputValue: '',
 			list: []
 		}
+		//// this绑定统一放到constructor里面,提升性能
+		this.handleInputChange = this.handleInputChange.bind(this)
+		this.handleBtnClick = this.handleBtnClick.bind(this)
+		this.handleDeleteItem = this.handleDeleteItem.bind(this)
 	}
   render() {
     return (
@@ -26,67 +28,99 @@ class TodoList extends Component {
 						id='inputLabel'
 						className='ipt'
 						value={this.state.inputValue} 
-						onChange={this.handleInputChange.bind(this)}
+						onChange={this.handleInputChange}
 					/>
 					<button
-						onClick={this.handleBtnClick.bind(this)}
+						onClick={this.handleBtnClick}
 					>提交</button>
 				</div>
 				<ul>
-					{
+					{	
 						// 数组的map方法
-						this.state.list.map((item, index) => {
-							return (<li 
-								key={index}
-								// 传值
-								onClick={this.handleDeleteItem.bind(this, index)}
-								//// 如果标签不转译写法，两个花括号，这样写的话，标签内的{item}就不需要了
-								// dangerouslySetInnerHTML={{__html: item}}
-							>{item}</li>)
-						})
+						// this.state.list.map((item, index) => {
+						// 	return (
+						// 		<TodoItem 
+						// 			key={index}
+						// 			// 传入props
+						// 			content={item}
+						// 			index={index}
+						// 			// 将方法传入子组件,this指向父组件
+						// 			deleteItem={this.handleDeleteItem}
+						// 		/>
+						// 	)
+						// })
+
+						//// jsx里一般是页面需要显示的内容,这里map柔和一些逻辑,会使得jsx看上去很长,可以提出来,放到一个方法里面
+						this.getTodoItem()
 					}
 				</ul>
-				{/* 这里是多行注释的方法 */} 
-				{
-					// 这里是单行注释的方法，注意花括号需要换行
-				}
 			</Fragment>
-    )
+    	)
+	}
+	getTodoItem() {
+		return this.state.list.map((item, index) => {
+			return (
+				<TodoItem 
+					key={index}
+					// 传入props
+					content={item}
+					index={index}
+					// 将方法传入子组件,this指向父组件
+					deleteItem={this.handleDeleteItem}
+				/>
+			)
+		})
 	}
 	// 输入
 	handleInputChange(e) {
 		// console.log(e.target.value)
 		// console.log(this)
-		//// react想改变state里的数据，不能直接改，需要使用this.setState({})方法
-		this.setState({
-			inputValue: e.target.value
+		//// 新版改变state更推荐的方式,是返回一个函数;  甚至es6一个对象可以写一行,不要return了
+		//// 这种方式是异步的设置,所以需要对value做一个保存,再在setstate中使用就不会报错
+		const value = e.target.value
+		this.setState(() => {
+			return {
+				inputValue: value
+			}
 		})
+		// this.setState({
+		// 	inputValue: e.target.value
+		// })
 	}
 	// 新增
 	handleBtnClick() {
-		this.setState({
-			// es6的展开运算符，叼的一批
-			list: [...this.state.list, this.state.inputValue],
-			// 添加之后，清空输入框内容
-			inputValue: ''
+		//// state修改方式,注意setState接收一个参数是prevState,是修改数据之前一次的值
+		this.setState((prevState) => {
+			return {
+				list: [...prevState.list, prevState.inputValue],
+				inputValue: ''
+			}
 		})
-		this.state.list.push(this.state.inputValue)
+		// this.setState({
+		// 	// es6的展开运算符，叼的一批
+		// 	list: [...this.state.list, this.state.inputValue],
+		// 	// 添加之后，清空输入框内容
+		// 	inputValue: ''
+		// })
 	}
 	// 删除
 	handleDeleteItem(index) {
-		// console.log(index)
-		// 将list做一层拷贝，原因是不能直接改state，react改变数据必须通过setState，下面的方式视乎也行，但是这中方式是错误的做法
-					// this.state.list.splice(index, 1)
-					// this.setState({
-					// 	list: this.state.list
-					// })
-		// 以上不正确，因为react有个innutable, state不允许我们做任何改变
-		const list = [...this.state.list]
-		// 下标为index的项删除
-		list.splice(index, 1)
-		this.setState({
-			list: list
+		//// state修改方式
+		this.setState((prevState) => {
+			const list = [...prevState.list]
+			list.splice(index, 1)
+			return {
+				list
+			}
 		})
+
+		// // console.log(index)
+		// const list = [...this.state.list]
+		// // 下标为index的项删除
+		// list.splice(index, 1)
+		// this.setState({
+		// 	list: list
+		// })
 	}
 }
 export default TodoList;
