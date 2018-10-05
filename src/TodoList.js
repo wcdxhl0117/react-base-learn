@@ -7,7 +7,7 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <div>jfadksjg;asdmlm</div>
+        <div></div>
       </div>
     )
   }
