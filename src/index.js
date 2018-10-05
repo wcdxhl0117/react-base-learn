@@ -4,8 +4,11 @@ import ReactDOM from 'react-dom';
 // import TodoList from './TodoList1/TodoList';
 // 第2个,组件拆分的版本
 // import TodoList from './TodoList2_zujianchaifen/TodoList';
-// 第3个,组件拆分的版本
-import TodoList from './TodoList3_daimayouhua/TodoList';
+// 第3个,代码优化
+// import TodoList from './TodoList3_daimayouhua/TodoList';
+// 第4个,Proptypes与DefaultProps
+import TodoList from './TodoList4_canshujiaoyan/TodoList';
+
 
 
 // PWA, 在支持https服务器上，具备：如果没网，也能看到网页缓存
