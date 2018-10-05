@@ -39,6 +39,9 @@ class TodoList extends Component {
 									key={index}
 									// 传入props
 									content={item}
+									index={index}
+									// 将方法传入子组件,this指向父组件
+									handleItemDelete={this.handleDeleteItem.bind(this)}
 								/>
 								// <li 
 								// 	key={index}
