@@ -15,7 +15,7 @@ class TodoItem extends Component {
 	handleClick() {
 		console.log(this.props.index)
 		// 调用父组件的方法
-		this.props.handleItemDelete(this.props.index)
+		this.props.deleteItem(this.props.index)
 	}
 }
 
