@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import TodoItem from './TodoItem'
 import './style.css'
 
+// props数据类型校验
+
 class TodoList extends Component {
 	constructor(props) {
 		super(props)
