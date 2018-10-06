@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // css3过度，css3动画,react-transtion-group动画
-import TodoList from './animation/index';
+// import TodoList from './animation/index';
 
 // 第1个,功能完整的版本
 // import TodoList from './TodoList1/TodoList';
@@ -20,6 +20,12 @@ import TodoList from './animation/index';
 // import TodoList from './TodoList7/TodoList';
 // 第7个,Charles数据模拟，
 // import TodoList from './TodoList8/TodoList';
+
+
+
+// redux,antd实现TodoList
+// 第1个,搭建TodoList项目
+import TodoList from './1redux-antd-todolist/TodoList';
 
 
 
