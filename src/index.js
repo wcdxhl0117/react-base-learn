@@ -27,7 +27,9 @@ import ReactDOM from 'react-dom';
 // 第1个,搭建TodoList项目，最初版本的store流程
 // import TodoList from './1redux-antd-todolist/TodoList';
 // 第2个,ActionTypes的拆分
-import TodoList from './2redux-antd-todolist/TodoList';
+// import TodoList from './2redux-antd-todolist/TodoList';
+// 第3个,使用actionCreator创建action,Redux知识点复习补充
+import TodoList from './3redux-antd-todolist/TodoList';
 
 
 

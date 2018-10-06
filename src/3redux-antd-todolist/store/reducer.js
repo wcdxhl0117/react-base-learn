@@ -1,4 +1,4 @@
-import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM } from './actionTypes'
+import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM } from './actionTypes';
 // state默认值
 const defaultState = {
     inputValue: '',
@@ -8,6 +8,7 @@ const defaultState = {
 export default (state = defaultState, action) => {
     // 输入
     if (action.type === CHANGE_INPUT_VALUE) {
+      console.log(19)
       const newState = JSON.parse(JSON.stringify(state));
       newState.inputValue = action.value;
       return newState;
