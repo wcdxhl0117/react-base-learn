@@ -19,6 +19,8 @@ class TodoList extends Component {
 				<div>
 					<label htmlFor='inputLabel'>请输入内容</label>
 					<input 
+						// ref引用dom节点
+						ref={(input) => {this.input = input}}
 						id='inputLabel'
 						className='ipt'
 						value={this.state.inputValue} 
@@ -50,6 +52,9 @@ class TodoList extends Component {
 	}
 	// 输入
 	handleInputChange(e) {
+		// 在react中可以用e.target获取到元素节点，也可以用ref
+		console.log(e.target)
+		console.log(this.input)
 		const value = e.target.value
 		this.setState(() => {
 			return {

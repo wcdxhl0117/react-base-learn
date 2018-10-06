@@ -27,7 +27,7 @@ TodoItem.propTypes = {
 	// test父组件没传,但是也不会报错,这是强校验加入个isRequired,这样就能检测到没传值
 	test: PropTypes.string.isRequired,
 	// 多种默认类型的写法
-	content: PropTypes.arrayOf(PropTypes.string, PropTypes.number),
+	content: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	deleteItem: PropTypes.func,
 	index: PropTypes.number
 }
