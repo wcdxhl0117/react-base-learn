@@ -51,9 +51,11 @@ import './style.css'
 
 /*
 	虚拟DOM中的Diff算法
-		> 
-		> 
-		> 
+		> 虚拟dom比对的方式就是Diff算法.
+		> 同级比较:从第一层开始比较,一直往下比较,直到不同,react就把不同的dom下面的所有虚拟dom全部删除掉,
+		  重新生成一遍下面的dom.同层比对好处就是算法简单,这样比对速度快
+		> 所以循环需要key,这样虚拟dom比对时能知道谁是谁,节约性能,同时如果用index做key,虚拟dom渲染时,导致key不稳定,无法关联
+			
 */
 
 class TodoList extends Component {
