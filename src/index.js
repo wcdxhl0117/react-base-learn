@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom';
 // import TodoList from './TodoList5/TodoList';
 // 第6个,虚拟dom,
 // import TodoList from './TodoList6/TodoList';
-// 第7个,ref,
+// 第7个,ref,setState的第二个参数
 import TodoList from './TodoList7/TodoList';
 
 

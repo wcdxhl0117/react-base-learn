@@ -30,7 +30,7 @@ class TodoList extends Component {
 						onClick={this.handleBtnClick}
 					>提交</button>
 				</div>
-				<ul>
+				<ul ref={(ul) => {this.ul = ul}}>
 					{	
 						this.getTodoItem()
 					}
@@ -64,12 +64,18 @@ class TodoList extends Component {
 	}
 	// 新增
 	handleBtnClick() {
+		// setState第二个参数,setState是异步函数，第二个函数是setState执行完再执行
 		this.setState((prevState) => {
 			return {
 				list: [...prevState.list, prevState.inputValue],
 				inputValue: ''
 			}
+		}, () => {
+			// 这里能拿到正确的长度
+			console.log(this.ul.querySelectorAll('div').length)
 		})
+		// 不能得到正确的长度，因为setState是异步执行，所以这里是设置之前的长度
+		console.log(this.ul.querySelectorAll('div').length)
 	}
 	// 删除
 	handleDeleteItem(index) {
