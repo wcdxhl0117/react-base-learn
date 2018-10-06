@@ -18,14 +18,16 @@ import ReactDOM from 'react-dom';
 // import TodoList from './TodoList6/TodoList';
 // 第7个,ref,setState的第二个参数，生命周期函数,生命周期使用场景
 // import TodoList from './TodoList7/TodoList';
-// 第7个,Charles数据模拟，
+// 第8个,Charles数据模拟，
 // import TodoList from './TodoList8/TodoList';
 
 
 
 // redux,antd实现TodoList
 // 第1个,搭建TodoList项目，最初版本的store流程
-import TodoList from './1redux-antd-todolist/TodoList';
+// import TodoList from './1redux-antd-todolist/TodoList';
+// 第2个,ActionTypes的拆分
+import TodoList from './2redux-antd-todolist/TodoList';
 
 
 
