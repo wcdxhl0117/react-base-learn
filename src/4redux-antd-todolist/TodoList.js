@@ -14,6 +14,8 @@ import 'antd/dist/antd.css';
 */
 // UI组件
 import TodoListUI from './TodoListUI';
+// 无状态组件
+// import TodoListUI from './TodoListUI_noState';
 
 class TodoList extends Component {
 	constructor(props) {

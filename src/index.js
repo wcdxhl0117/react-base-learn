@@ -30,7 +30,7 @@ import ReactDOM from 'react-dom';
 // import TodoList from './2redux-antd-todolist/TodoList';
 // 第3个,使用actionCreator创建action,Redux知识点复习补充
 // import TodoList from './3redux-antd-todolist/TodoList';
-// 第4个,UI组件和容器组件拆分
+// 第4个,UI组件和容器组件拆分, 无状态组件
 import TodoList from './4redux-antd-todolist/TodoList';
 
 
