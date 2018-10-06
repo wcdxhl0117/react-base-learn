@@ -12,14 +12,25 @@ export default (state = defaultState, action) => {
       // 对state做一次深拷贝
       const newState = JSON.parse(JSON.stringify(state));
       newState.inputValue = action.value;
-      return newState
+      // 讲newState return给state
+      return newState;
     }
     // 添加
     if (action.type === 'add_todo_item') {
       const newState = JSON.parse(JSON.stringify(state));
       newState.list.push(newState.inputValue);
       newState.inputValue = '';
-      return newState
+      return newState;
     }
+    // 删除
+    if (action.type === 'delete_todo_item') {
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.list.splice(action.index, 1);
+      return newState;
+    }
+
+
+
+    // 最后把新state返回
     return state;
 }

@@ -14,7 +14,7 @@ class TodoList extends Component {
 		// store提供一个获取store的方法--getState()
 		console.log(store.getState());
 		this.state = store.getState();
-		// 订阅store，触发更新，subscribe方法接受一个函数来更新组件的state
+		// 监听store变化，触发更新，subscribe方法接受一个函数来更新组件的state
 		store.subscribe(this.handleStoreChange)
 	}
 
@@ -27,12 +27,12 @@ class TodoList extends Component {
 				  style={{width:'300px'}}
 					onChange={this.handleInputChange}
 				/>
-			<Button onClick={this.handleBtnClick} type="primary">提交</Button>
+				<Button onClick={this.handleBtnClick} type="primary">提交</Button>
 				<List
 					style={{width: '300px'}}
 					bordered
 					dataSource={this.state.list}
-					renderItem={item => (<List.Item>{item}</List.Item>)}
+					renderItem={(item, index) => (<List.Item onClick={this.handleDeleteItem.bind(this, index)}>{item}</List.Item>)}
 				/>
 			</div>
     	)
@@ -68,7 +68,14 @@ class TodoList extends Component {
 	}
 
 	// 删除item逻辑
-
+	handleDeleteItem(index) {
+		// console.log(index)
+		const action = {
+			type: 'delete_todo_item',
+			index
+		}
+		store.dispatch(action);
+	}
 }
 
 export default TodoList;
