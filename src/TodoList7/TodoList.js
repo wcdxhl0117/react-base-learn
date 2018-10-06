@@ -26,7 +26,7 @@ import './style.css'
 	生命周期函数使用场景:
 		1.父组件的render被执行,子组件的render也会被执行,这样有性能损耗:
 			优化: 子组件中用生命周期函数中的shouldComponentUpdate来规避子组件不必要的render
-		2.
+		2.ajax请求放在componentDidMount(挂载完毕)最好的
 */
 
 /*
