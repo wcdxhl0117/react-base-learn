@@ -94,11 +94,12 @@ class TodoList extends Component {
 		console.log('father: componentWillReceiveProps')
 	}
 
-	// componentWillReceiveProps: 在TodoItem看效果
+	// componentWillUnmount: 在TodoItem看效果
 	componentWillUnmount() {
-		console.log('father: componentWillReceiveProps')
+		console.log('father: componentWillUnmount')
 	}
 
+	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// 下面都是私有函数
 	getTodoItem() {

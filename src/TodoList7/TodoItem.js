@@ -26,7 +26,7 @@ class TodoItem extends Component {
 
 	// componentWillReceiveProps: 组件即将从页面中剔除时,会被执行
 	componentWillUnmount() {
-		console.log('child: componentWillReceiveProps')
+		console.log('child: componentWillUnmount')
 	}
 
 	handleClick() {
