@@ -24,7 +24,7 @@ import ReactDOM from 'react-dom';
 
 
 // redux,antd实现TodoList
-// 第1个,搭建TodoList项目
+// 第1个,搭建TodoList项目，最初版本的store流程
 import TodoList from './1redux-antd-todolist/TodoList';
 
 
