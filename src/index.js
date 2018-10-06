@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// 动画
+// css3过度，css3动画,react-transtion-group动画
 import TodoList from './animation/index';
 
 // 第1个,功能完整的版本
