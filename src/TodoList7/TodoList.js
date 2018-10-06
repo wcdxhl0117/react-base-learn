@@ -19,7 +19,16 @@ import './style.css'
 				  componentDidUpdate(跟新结束)
 
 	3.Unmounting: componentWillUnmount(组件卸载前)
+	注意:生命周期函数都可以没有,除了render必须存在!!!!!
 */
+
+/*
+	生命周期函数使用场景:
+		父组件的render被执行,子组件的render也会被执行,这样有性能损耗:
+			优化: 子组件中用生命周期函数中的shouldComponentUpdate来规避子组件不必要的render
+*/
+
+
 class TodoList extends Component {
 	constructor(props) {
 		super(props)
@@ -99,7 +108,7 @@ class TodoList extends Component {
 		console.log('father: componentWillUnmount')
 	}
 
-	
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// 下面都是私有函数
 	getTodoItem() {
