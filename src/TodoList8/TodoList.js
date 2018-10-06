@@ -49,6 +49,7 @@ class TodoList extends Component {
 		axios.get('/api/todolist')
       .then((response)=> {
 				console.log(response)
+				// 拿到数据，这里setState设置数据
 			})
       .catch(function (error) {
           console.log(error);

@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// 动画
+import TodoList from './animation/index';
+
 // 第1个,功能完整的版本
 // import TodoList from './TodoList1/TodoList';
 // 第2个,组件拆分的版本
@@ -15,7 +19,7 @@ import ReactDOM from 'react-dom';
 // 第7个,ref,setState的第二个参数，生命周期函数,生命周期使用场景
 // import TodoList from './TodoList7/TodoList';
 // 第7个,Charles数据模拟，
-import TodoList from './TodoList8/TodoList';
+// import TodoList from './TodoList8/TodoList';
 
 
 
