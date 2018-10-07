@@ -20,7 +20,7 @@ const TodoListUI = (props) => {
         bordered
         dataSource={props.list}
         // 这个拆分注意方法
-        renderItem={(item, index) => (<List.Item onClick={(index) => {props.handleDeleteItem(index)}}>{item}</List.Item>)}
+        renderItem={(item, index) => (<List.Item onClick={() => {props.handleDeleteItem(index)}}>{item}</List.Item>)}
       />
     </div>
   )

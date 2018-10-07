@@ -17,8 +17,7 @@ class TodoListUI extends Component {
 					bordered
 					dataSource={this.props.list}
           // 这个拆分注意方法
-          // renderItem={(item, index) => (<List.Item onClick={this.handleDeleteItem.bind(this, index)}>{item}</List.Item>)}
-					renderItem={(item, index) => (<List.Item onClick={(index) => {this.props.handleDeleteItem(index)}}>{item}</List.Item>)}
+					renderItem={(item, index) => (<List.Item onClick={() => {this.props.handleDeleteItem(index)}}>{item}</List.Item>)}
 				/>
 			</div>
     )

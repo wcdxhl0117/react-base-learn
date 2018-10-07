@@ -34,8 +34,10 @@ import ReactDOM from 'react-dom';
 // import TodoList from './4redux-antd-todolist/TodoList';
 // 第5个,Redux发送异步请求获取数据
 // import TodoList from './5redux-antd-todolist/TodoList';
-// 第6个,Redux-thunk中间件运行ajax求情发送
-import TodoList from './6redux-antd-todolist/TodoList';
+// 第6个,Redux-thunk中间件运行ajax求情发送,中间件概念
+// import TodoList from './6redux-antd-todolist/TodoList';
+// 第7个,Redux-saga中间件
+import TodoList from './7redux-antd-todolist/TodoList';
 
 
 
