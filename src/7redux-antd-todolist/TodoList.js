@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-// import axios from 'axios'
+import axios from 'axios'
 // 引入store
 import store from './store/'
 // 引入actionCreators里面的action
-import { getInputChangeAction, getAddItemAction, getDeleteItemAction, getTodoList } from './store/actionCreators';
+import { getInputChangeAction, getAddItemAction, getDeleteItemAction, initListAction } from './store/actionCreators';
 
 // antd样式
 import 'antd/dist/antd.css';
 
+/*
+	UI组件和容器组件：
+		逻辑和render拆分，UI组件页面渲染，容器组件负责页面逻辑
+*/
+// UI组件
 import TodoListUI from './TodoListUI';
 // 无状态组件
 // import TodoListUI from './TodoListUI_noState';
@@ -37,22 +42,18 @@ class TodoList extends Component {
 		)
 	}
 
- ////// 异步请求或者复杂的逻辑最好是放在其他地方统一管理,redux-thunk
- // redux-thunk使用,将异步代码移到action里
+// redux-saga异步方法
 	componentDidMount() {
-		//// 通过redux-thunk将Ajax放入了actionCreators里
-		const action = getTodoList();
-		store.dispatch(action);
-		// axios.get('/list.json').then((res) => {
-		// 	console.log(res);
-		// 	const data = res.data;
-		// 	// 调用actionCreator里的异步方法,去改变redux里的state
-		// 	const action = initListAction(data);
-		// 	store.dispatch(action);
-		//
-		// }).catch((error) => {
-		// 	console.log(error)
-		// })
+		axios.get('/list.json').then((res) => {
+			console.log(res);
+			const data = res.data;
+			// 调用actionCreator里的异步方法,去改变redux里的state
+			const action = initListAction(data);
+			store.dispatch(action);
+
+		}).catch((error) => {
+			console.log(error)
+		})
 	}
 	// 下面是私有方法
 	//////////////////////////////////////////////////////////////////////////////
