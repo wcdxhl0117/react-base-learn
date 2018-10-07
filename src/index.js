@@ -33,8 +33,9 @@ import ReactDOM from 'react-dom';
 // 第4个,UI组件和容器组件拆分, 无状态组件
 // import TodoList from './4redux-antd-todolist/TodoList';
 // 第5个,Redux发送异步请求获取数据
-import TodoList from './5redux-antd-todolist/TodoList';
-
+// import TodoList from './5redux-antd-todolist/TodoList';
+// 第6个,Redux-thunk中间件运行ajax求情发送
+import TodoList from './6redux-antd-todolist/TodoList';
 
 
 

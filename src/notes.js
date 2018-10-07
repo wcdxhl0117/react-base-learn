@@ -17,8 +17,9 @@
     react函数式编程: 其实react编写写的都是一个一个的函数
                     这样的好处:维护方便
                               如果是一个个函数组成,自动化测试很方便
-    
-5.
 
-
-		
+5.redux流程总结
+    1.首先要在actionCreators去创建action: action的type需要在actionTypes中去统一定义
+    2.在todolist中去调用action方法,在dispatch方法派发action给store,
+      store连同之前的数据一起转发给reducer来处理
+    3.reducer处理好后在交给store改变state
