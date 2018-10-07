@@ -1,4 +1,4 @@
-import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST_ACTION } from './actionTypes';
+import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST_ACTION, GET_INIT_LIST } from './actionTypes';
 
 export const getInputChangeAction = (value) => {
   return {
@@ -25,5 +25,13 @@ export const initListAction = (data) => {
   return {
     type: INIT_LIST_ACTION,
     data
+  }
+}
+
+
+// saga异步action
+export const getInitList = (data) => {
+  return {
+    type: GET_INIT_LIST
   }
 }

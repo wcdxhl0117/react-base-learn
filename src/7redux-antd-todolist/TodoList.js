@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+// import axios from 'axios'
 // 引入store
 import store from './store/'
 // 引入actionCreators里面的action
-import { getInputChangeAction, getAddItemAction, getDeleteItemAction, initListAction } from './store/actionCreators';
+import { getInputChangeAction, getAddItemAction, getDeleteItemAction, getInitList } from './store/actionCreators';
 
 // antd样式
 import 'antd/dist/antd.css';
@@ -44,17 +44,21 @@ class TodoList extends Component {
 
 // redux-saga异步方法
 	componentDidMount() {
-		axios.get('/list.json').then((res) => {
-			console.log(res);
-			const data = res.data;
-			// 调用actionCreator里的异步方法,去改变redux里的state
-			const action = initListAction(data);
-			store.dispatch(action);
-
-		}).catch((error) => {
-			console.log(error)
-		})
+		const action = getInitList();
+		store.dispatch(action);
+		// axios.get('/list.json').then((res) => {
+		// 	console.log(res);
+		// 	const data = res.data;
+		// 	const action = initListAction(data);
+		// 	store.dispatch(action);
+		//
+		// }).catch((error) => {
+		// 	console.log(error)
+		// })
 	}
+
+
+
 	// 下面是私有方法
 	//////////////////////////////////////////////////////////////////////////////
 	handleInputChange(e) {
