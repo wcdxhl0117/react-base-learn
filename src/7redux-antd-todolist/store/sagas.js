@@ -17,9 +17,14 @@ function* mySaga() {
 // 这能直接执行,因为当todolist派发action时,saga也能接收到,这里监听了GET_INIT_LIST,所以能执行
 function* gitInitList() {
   // 异步逻辑
-  const res = yield axios.get('/list.json');
-  const action = initListAction(res.data);
-  yield put(action);
+  try{
+    const res = yield axios.get('/list.json');
+    const action = initListAction(res.data);
+    yield put(action);
+  }catch(e) {
+    // 失败
+  }
+
 
   // 在Generator函数中不需要用promise写法了
   // axios.get('/list.json').then((res) => {
