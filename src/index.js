@@ -42,9 +42,19 @@ import ReactDOM from 'react-dom';
 import TodoList from './8redux-antd-todolist/TodoList';
 
 
+// React-Redux开始
+import { Provider } from 'react-redux';
+import store from './8redux-antd-todolist/store/'
+
+const App = (
+  // Provider提供器连接了store,那么Provider里面的组件都能使用store了
+  <Provider store={store}>
+    <TodoList />
+  </Provider>
+);
+ReactDOM.render(App, document.getElementById('root'));
+// React-Redux结束
 
 
-// PWA, 在支持https服务器上，具备：如果没网，也能看到网页缓存
-// import registerServiceWorker from './registerServiceWorker';
-
-ReactDOM.render(<TodoList />, document.getElementById('root'));
+// 非React-Redux项目使用以下方式
+// ReactDOM.render(<TodoList />, document.getElementById('root'));

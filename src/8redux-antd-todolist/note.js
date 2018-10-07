@@ -1,2 +1,2 @@
-redux-redux使用:
+React-Redux使用:
     

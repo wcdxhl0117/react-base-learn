@@ -1,74 +1,70 @@
 import React, { Component } from 'react';
-// import axios from 'axios'
 // 引入store
-import store from './store/'
-// 引入actionCreators里面的action
-import { getInputChangeAction, getAddItemAction, getDeleteItemAction, getTodoList } from './store/actionCreators';
-
-// antd样式
-import 'antd/dist/antd.css';
-
-import TodoListUI from './TodoListUI';
-// 无状态组件
-// import TodoListUI from './TodoListUI_noState';
+import store from './store/';
+// 引入react-redux连接,就能通过connect方法获取到store里面的数据
+import { connect } from 'react-redux';
 
 class TodoList extends Component {
 	constructor(props) {
 		super(props);
-		this.handleInputChange = this.handleInputChange.bind(this);
-		this.handleStoreChange = this.handleStoreChange.bind(this);
-		this.handleBtnClick = this.handleBtnClick.bind(this);
-		// 拆分UI组件时，先绑定this指向
-		this.handleDeleteItem = this.handleDeleteItem.bind(this);
-		this.state = store.getState();
-		store.subscribe(this.handleStoreChange)
-	}
 
- // UI组件负责渲染页面
+	}
   render() {
+		const { inputValue, InputChange, handleClick,handleDeleteItem } = this.props;
     return (
-			<TodoListUI
-				inputValue={this.state.inputValue}
-				handleInputChange={this.handleInputChange}
-				handleBtnClick={this.handleBtnClick}
-				list={this.state.list}
-				handleDeleteItem={this.handleDeleteItem}
-			/>
-		)
-	}
-
-	componentDidMount() {
-		//// 通过redux-thunk将Ajax放入了actionCreators里
-		const action = getTodoList();
-		store.dispatch(action);
-	}
-
-
-	
-	// 下面是私有方法
-	//////////////////////////////////////////////////////////////////////////////
-	handleInputChange(e) {
-		// actionCreators用法
-		const action = getInputChangeAction(e.target.value)
-		store.dispatch(action);
-	}
-
-	handleStoreChange() {
-		 this.setState(store.getState());
-	}
-
-	// 点击添加item的store逻辑
-	handleBtnClick() {
-		const action = getAddItemAction();
-		store.dispatch(action);
-	}
-
-	// 删除item逻辑
-	handleDeleteItem(index) {
-		// console.log(index)
-		const action = getDeleteItemAction(index);
-		store.dispatch(action);
+				<div>
+					<div>
+						<input onChange={InputChange} value={inputValue} />
+						<button onClick={handleClick}>提交</button>
+					</div>
+					<ul>
+						{
+							this.props.list.map((item, index) => {
+								return <li onClick={() => {this.props.handleDeleteItem(index)}} key={index}>{item}</li>
+							})
+						}
+					</ul>
+				</div>
+    	)
 	}
 }
 
-export default TodoList;
+// 把store里面的数据映射到组件,变成组件的props
+const mapStateToProps = (state) => {
+	// 下面时映射关系
+	return {
+		inputValue: state.inputValue,
+		list: state.list
+	}
+}
+
+// 如果想对store的数据做修改,eact-redux将store的dispatch方,挂载到props上,所以可以通过props调用到dispatch,
+const mapDispatchProps = (dispatch) => {
+	return {
+		// 这里调用dispatch改变store
+		InputChange(e) {
+			// console.log(e.target.value)
+			const action = {
+				type: 'change_input_value',
+				value: e.target.value
+			}
+			dispatch(action);
+		},
+		handleClick() {
+			const action = {
+				type: 'add_todo_item'
+			}
+			dispatch(action);
+		},
+		handleDeleteItem(index) {
+			const action = {
+				type: 'delete_todo_item',
+				index
+			}
+			dispatch(action);
+		}
+	}
+}
+
+// 其实这下面export的可以理解为容器组件,todolist页完全能拆分为UI组件
+export default connect(mapStateToProps, mapDispatchProps)(TodoList);
