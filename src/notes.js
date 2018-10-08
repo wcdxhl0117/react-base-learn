@@ -23,3 +23,8 @@
     2.在todolist中去调用action方法,在dispatch方法派发action给store,
       store连同之前的数据一起转发给reducer来处理
     3.reducer处理好后在交给store改变state
+
+
+6. iconfont使用
+   注册 -> 图标管理-我的项目-> 搜索图标 -> 加入购物车 -> 下载到本地（svg,eot,tff,woff,iconfont.css有用）
+   使用：
