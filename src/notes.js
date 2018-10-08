@@ -27,4 +27,6 @@
 
 6. iconfont使用
    注册 -> 图标管理-我的项目-> 搜索图标 -> 加入购物车 -> 下载到本地（svg,eot,tff,woff,iconfont.css有用）
-   使用：
+   使用：将有用文件放在同目录，将css文件的iconfont文件引入加入相对路劲（./）,注意data别加
+        将图标作为全局样式最好
+        复制图标编码，和标签，如：<i class="iconfont">&#xe637;</i>

@@ -14,6 +14,7 @@ class TodoList extends Component {
     return (
 				<div>
 					<div>
+						<i className="iconfont">&#xe637;</i>
 						<input onChange={InputChange} value={inputValue} />
 						<button onClick={handleClick}>提交</button>
 					</div>

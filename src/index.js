@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './static/iconfont/iconfont.css';
 
 // css3过度，css3动画,react-transtion-group动画
 // import TodoList from './animation/index';
