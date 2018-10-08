@@ -30,3 +30,12 @@
    使用：将有用文件放在同目录，将css文件的iconfont文件引入加入相对路劲（./）,注意data别加
         将图标作为全局样式最好
         复制图标编码，和标签，如：<i class="iconfont">&#xe637;</i>
+
+7.reducer的拆分
+  redux提供一个combineReducers函数，来干这件事
+  在reducer中引入combineReducers和子reducer,调用combineReducers，并传入子reducer:
+  import combineReducers from 'redux'
+  import headerReducers from './header/store/'
+  export default combineReducers({
+    header: headerReducers
+  })
