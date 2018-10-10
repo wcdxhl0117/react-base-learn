@@ -4,7 +4,7 @@ const defaultState = {
     list: []
 }
 
-// reducer可以接受reducer，但是不能修改reducer,所以把state拷贝了一份修改
+// reducer可以接受state，但是不能修改state,所以把state拷贝了一份修改
 export default (state = defaultState, action) => {
     // console.log(state, action);
     // 输入
