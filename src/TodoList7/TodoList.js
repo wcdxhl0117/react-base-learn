@@ -33,8 +33,8 @@ import './style.css'
 
 /*
 	总结下目前为止,react性能优化的点:
-		1.事件的改变this指向,放在constructor中,这样能保证作用于绑定操作只执行一次
-		2.setState是一部操作,可以将多次数据改变结合成一次来做
+		1.事件的改变this指向,放在constructor中,这样能保证作用域绑定操作只执行一次
+		2.setState是异步操作,可以将多次数据改变结合成一次来做
 		3.react用了虚拟DOM概念,还有同层比对,以及key等概念,来提升虚拟dom比对速度,从而提升react性能
 		4.借助shouldComponentUpdate,防止不必要的render,节约性能
 */
