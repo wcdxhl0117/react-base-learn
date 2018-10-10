@@ -24,10 +24,10 @@ class TodoList extends Component {
 						// label商家for，会认为是循环的for，要用htmlFor代替
 					}
 					<label htmlFor='inputLabel'>请输入内容</label>
-					<input 
+					<input
 						id='inputLabel'
 						className='ipt'
-						value={this.state.inputValue} 
+						value={this.state.inputValue}
 						onChange={this.handleInputChange}
 					/>
 					<button
@@ -35,11 +35,11 @@ class TodoList extends Component {
 					>提交</button>
 				</div>
 				<ul>
-					{	
+					{
 						// 数组的map方法
 						// this.state.list.map((item, index) => {
 						// 	return (
-						// 		<TodoItem 
+						// 		<TodoItem
 						// 			key={index}
 						// 			// 传入props
 						// 			content={item}
@@ -60,7 +60,7 @@ class TodoList extends Component {
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
 			return (
-				<TodoItem 
+				<TodoItem
 					key={index}
 					// 传入props
 					content={item}
@@ -75,7 +75,7 @@ class TodoList extends Component {
 	handleInputChange(e) {
 		// console.log(e.target.value)
 		// console.log(this)
-		//// 新版改变state更推荐的方式,是返回一个函数;  甚至es6一个对象可以写一行,不要return了
+		//// 新版改变state更推荐的方式,是返回一个函数; 甚至es6一个对象可以写一行,不要return了
 		//// 这种方式是异步的设置,所以需要对value做一个保存,再在setstate中使用就不会报错
 		const value = e.target.value
 		this.setState(() => {
