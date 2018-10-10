@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import TodoItem from './TodoItem'
 import './style.css'
 
-/* 
+/*
 	生命周期函数是指在某一个时刻组件会自动调用执行的函数
 	注意：constructor符合生命周期定义，但是他不是react独有的，他是ES6自带的，所以不归类在react生命周期函数里
 	1.Mounting(挂在)：componentWillMount(挂载前)，render(渲染)，componentDidMount(挂载完毕)
@@ -19,7 +19,9 @@ import './style.css'
 				  componentDidUpdate(跟新结束)
 
 	3.Unmounting: componentWillUnmount(组件卸载前)
-	注意:生命周期函数都可以没有,除了render必须存在!!!!!
+
+	!!!!注意:生命周期函数都可以没有,除了render必须存在!!!!
+
 */
 
 /*
@@ -62,12 +64,12 @@ class TodoList extends Component {
 			<Fragment>
 				<div>
 					<label htmlFor='inputLabel'>请输入内容</label>
-					<input 
+					<input
 						// ref引用dom节点
 						ref={(input) => {this.input = input}}
 						id='inputLabel'
 						className='ipt'
-						value={this.state.inputValue} 
+						value={this.state.inputValue}
 						onChange={this.handleInputChange}
 					/>
 					<button
@@ -75,7 +77,7 @@ class TodoList extends Component {
 					>提交</button>
 				</div>
 				<ul ref={(ul) => {this.ul = ul}}>
-					{	
+					{
 						this.getTodoItem()
 					}
 				</ul>
@@ -94,7 +96,7 @@ class TodoList extends Component {
 		return true
 	}
 
-	/* 
+	/*
 		componentWillUpdate,组件更新之前执行，但是在shouldComponentUpdate之后执行，
 		如果shouldComponentUpdate返回true执行，如果返回false，就不执行了
 	*/
@@ -123,7 +125,7 @@ class TodoList extends Component {
 	getTodoItem() {
 		return this.state.list.map((item, index) => {
 			return (
-				<TodoItem 
+				<TodoItem
 					key={index}
 					content={item}
 					index={index}
