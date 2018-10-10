@@ -29,8 +29,6 @@ export default (state = defaultState, action) => {
       return newState;
     }
 
-
-
     // 最后把新state返回
     return state;
 }
