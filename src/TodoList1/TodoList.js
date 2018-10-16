@@ -14,8 +14,8 @@ class TodoList extends Component {
 			list: []
 		}
 	}
-  render() {
-    return (
+  	render() {
+    	return (
 			<Fragment>
 				<div>
 					{
@@ -51,7 +51,7 @@ class TodoList extends Component {
 					// 这里是单行注释的方法，注意花括号需要换行
 				}
 			</Fragment>
-    )
+    	)
 	}
 	// 输入
 	handleInputChange(e) {
