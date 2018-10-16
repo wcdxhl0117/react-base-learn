@@ -10,9 +10,9 @@ import './static/iconfont/iconfont.css';
 // 第2个,组件拆分的版本
 // import TodoList from './TodoList2_zujianchaifen/TodoList';
 // 第3个,代码优化
-import TodoList from './TodoList3_daimayouhua/TodoList';
+// import TodoList from './TodoList3_daimayouhua/TodoList';
 // 第4个,Proptypes与DefaultProps
-// import TodoList from './TodoList4_canshujiaoyan/TodoList';
+import TodoList from './TodoList4_canshujiaoyan/TodoList';
 // 第5个,Props,State与render的关系
 // import TodoList from './TodoList5/TodoList';
 // 第6个,虚拟dom,

@@ -19,9 +19,6 @@ class TodoList extends Component {
     return (
 			<Fragment>
 				<div>
-					{
-						// label商家for，会认为是循环的for，要用htmlFor代替
-					}
 					<label htmlFor='inputLabel'>请输入内容</label>
 					<input
 						id='inputLabel'
