@@ -72,7 +72,6 @@ class TodoList extends Component {
 			// 添加之后，清空输入框内容
 			inputValue: ''
 		})
-		this.state.list.push(this.state.inputValue)
 	}
 	// 删除
 	handleDeleteItem(index) {

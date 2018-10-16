@@ -3,7 +3,6 @@ import TodoItem from './TodoItem'
 //// 样式引入放最下面
 import './style.css'
 
-// 将组件拆分为两部分,首先是上面的输入框和按钮为一个组件,然后下面的每一项为一个组件
 class TodoList extends Component {
 	constructor(props) {
 		super(props)
