@@ -52,7 +52,7 @@ import { Provider } from 'react-redux';
 import store from './8redux-antd-todolist/store/'
 
 const App = (
-  // Provider提供器连接了store,那么Provider里面的组件都能使用store了
+  // Provider提供器连接了store, 那么Provider里面的组件都能使用store了
   <Provider store={store}>
     <TodoList />
   </Provider>

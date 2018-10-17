@@ -30,7 +30,7 @@ class TodoList extends Component {
 	}
 }
 
-// 把store里面的数据映射到组件,变成组件的props
+// 把store里面的数据映射到组件, 变成组件的props
 const mapStateToProps = (state) => {
 	// 下面时映射关系
 	return {
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
 	}
 }
 
-// 如果想对store的数据做修改,eact-redux将store的dispatch方,挂载到props上,所以可以通过props调用到dispatch,
+// 如果想对store的数据做修改, eact-redux将store的dispatch方, 挂载到props上,所以可以通过props调用到dispatch
 const mapDispatchProps = (dispatch) => {
 	return {
 		// 这里调用dispatch改变store
