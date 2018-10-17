@@ -4,8 +4,8 @@ import { takeEvery, put } from 'redux-saga/effects';
 
 // 引入异步的action的type
 import { GET_INIT_LIST } from './actionTypes';
-// 异步操作返回的结果需要initListAction, 所以引入
-import { initListAction } from './actionCreators'
+// 异步操作返回的结果需要InitList, 所以引入
+import { InitList } from './actionCreators'
 import axios from 'axios'
 
 // saga引入的必须是Generator函数
@@ -19,7 +19,7 @@ function* gitInitList() {
   // 异步逻辑
   try{
     const res = yield axios.get('/list.json');
-    const action = initListAction(res.data);
+    const action = InitList(res.data);
     yield put(action);
   }catch(e) {
     // 失败
@@ -31,7 +31,7 @@ function* gitInitList() {
   // axios.get('/list.json').then((res) => {
   // 	console.log(res);
   // 	const data = res.data;
-  // 	const action = initListAction(data);
+  // 	const action = InitList(data);
   //   // saga派发action用put
   //   put(action)
   // 	// store.dispatch(action);

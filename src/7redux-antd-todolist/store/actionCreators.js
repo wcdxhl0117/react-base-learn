@@ -30,8 +30,9 @@ export const initListAction = (data) => {
 
 
 // saga异步action
-export const getInitList = (data) => {
+export const InitList = (data) => {
   return {
-    type: GET_INIT_LIST
+    type: GET_INIT_LIST,
+    data
   }
 }

@@ -9,24 +9,24 @@ class TodoList extends Component {
 		super(props);
 
 	}
-  render() {
-		const { inputValue, InputChange, handleClick,handleDeleteItem } = this.props;
-    return (
+	render() {
+		const { inputValue, InputChange, handleClick, handleDeleteItem } = this.props;
+		return (
+			<div>
 				<div>
-					<div>
-						<i className="iconfont">&#xe637;</i>
-						<input onChange={InputChange} value={inputValue} />
-						<button onClick={handleClick}>提交</button>
-					</div>
-					<ul>
-						{
-							this.props.list.map((item, index) => {
-								return <li onClick={() => {this.props.handleDeleteItem(index)}} key={index}>{item}</li>
-							})
-						}
-					</ul>
+					<i className="iconfont">&#xe637;</i>
+					<input onChange={InputChange} value={inputValue} />
+					<button onClick={handleClick}>提交</button>
 				</div>
-    	)
+				<ul>
+					{
+						this.props.list.map((item, index) => {
+							return <li onClick={() => { this.props.handleDeleteItem(index) }} key={index}>{item}</li>
+						})
+					}
+				</ul>
+			</div>
+		)
 	}
 }
 

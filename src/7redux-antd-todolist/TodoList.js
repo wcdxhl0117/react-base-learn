@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // 引入store
 import store from './store/'
 // 引入actionCreators里面的action
-import { getInputChangeAction, getAddItemAction, getDeleteItemAction, getInitList } from './store/actionCreators';
+import { getInputChangeAction, getAddItemAction, getDeleteItemAction, InitList } from './store/actionCreators';
 
 // antd样式
 import 'antd/dist/antd.css';
@@ -44,7 +44,7 @@ class TodoList extends Component {
 
 // redux-saga异步方法
 	componentDidMount() {
-		const action = getInitList();
+		const action = InitList();
 		store.dispatch(action);
 		// axios.get('/list.json').then((res) => {
 		// 	console.log(res);

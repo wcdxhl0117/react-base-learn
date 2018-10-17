@@ -38,9 +38,9 @@ import './static/iconfont/iconfont.css';
 // 第6个,Redux-thunk中间件运行ajax求情发送,中间件概念
 // import TodoList from './6redux-antd-todolist/TodoList';
 // 第7个,Redux-saga中间件
-import TodoList from './7redux-antd-todolist/TodoList';
+// import TodoList from './7redux-antd-todolist/TodoList';
 // 第8个,Raect_Redux的使用
-// import TodoList from './8redux-antd-todolist/TodoList';
+import TodoList from './8redux-antd-todolist/TodoList';
 
 // mycode自己敲一遍
 // import TodoList from './1Mycode/TodoList';
@@ -48,18 +48,18 @@ import TodoList from './7redux-antd-todolist/TodoList';
 
 
 // React-Redux开始
-// import { Provider } from 'react-redux';
-// import store from './8redux-antd-todolist/store/'
+import { Provider } from 'react-redux';
+import store from './8redux-antd-todolist/store/'
 
-// const App = (
-//   // Provider提供器连接了store,那么Provider里面的组件都能使用store了
-//   <Provider store={store}>
-//     <TodoList />
-//   </Provider>
-// );
-// ReactDOM.render(App, document.getElementById('root'));
+const App = (
+  // Provider提供器连接了store,那么Provider里面的组件都能使用store了
+  <Provider store={store}>
+    <TodoList />
+  </Provider>
+);
+ReactDOM.render(App, document.getElementById('root'));
 // React-Redux结束
 
 
 // 非React-Redux项目使用以下方式
-ReactDOM.render(<TodoList />, document.getElementById('root'));
+// ReactDOM.render(<TodoList />, document.getElementById('root'));
