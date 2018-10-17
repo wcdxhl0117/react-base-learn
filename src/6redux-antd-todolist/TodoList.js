@@ -37,8 +37,8 @@ class TodoList extends Component {
 		)
 	}
 
- ////// 异步请求或者复杂的逻辑最好是放在其他地方统一管理,redux-thunk
- // redux-thunk使用,将异步代码移到action里
+ ////// 异步请求或者复杂的逻辑最好是放在其他地方统一管理, redux-thunk
+ // redux-thunk使用, 将异步代码移到action里
 	componentDidMount() {
 		//// 通过redux-thunk将Ajax放入了actionCreators里
 		const action = getTodoList();

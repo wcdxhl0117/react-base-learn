@@ -47,7 +47,7 @@ class TodoList extends Component {
 		axios.get('/list.json').then((res) => {
 			console.log(res);
 			const data = res.data;
-			// 调用actionCreator里的异步方法,去改变redux里的state
+			// 调用actionCreator里的异步方法, 去改变redux里的state
 			const action = initListAction(data);
 			store.dispatch(action);
 
