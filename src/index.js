@@ -14,9 +14,9 @@ import './static/iconfont/iconfont.css';
 // 第4个,Proptypes与DefaultProps
 // import TodoList from './TodoList4_canshujiaoyan/TodoList';
 // 第5个,Props,State与render的关系
-import TodoList from './TodoList5/TodoList';
+// import TodoList from './TodoList5/TodoList';
 // 第6个,虚拟dom,
-// import TodoList from './TodoList6/TodoList';
+import TodoList from './TodoList6/TodoList';
 // 第7个,ref,setState的第二个参数，生命周期函数,生命周期使用场景
 // import TodoList from './TodoList7/TodoList';
 // 第8个,Charles数据模拟，

@@ -3,13 +3,12 @@ import TodoItem from './TodoItem'
 import Test from './test'
 import './style.css'
 
-// props数据类型校验
 
 class TodoList extends Component {
 	constructor(props) {
 		super(props)
 		// state,props和render的关系
-		// 当组件的state或者props发生变化时,render函数就会重新执行
+		// 当组件的state或者props发生变化时, render函数就会重新执行
 		this.state = {
 			inputValue: '',
 			list: []
@@ -25,9 +24,6 @@ class TodoList extends Component {
 				{/* 子组件的props改变,子组件的render也会重新执行 */}
 				<Test content={this.state.inputValue} />
 				<div>
-					{
-						// label商家for，会认为是循环的for，要用htmlFor代替
-					}
 					<label htmlFor='inputLabel'>请输入内容</label>
 					<input 
 						id='inputLabel'

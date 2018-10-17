@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import TodoItem from './TodoItem'
 import './style.css'
 
-// 虚拟Dom理论:如果没有react,自己实现render的思路
+// 虚拟Dom理论:如果没有react, 自己实现render的思路
 /*
 	方法一
 		1.定义state数据
@@ -15,7 +15,7 @@ import './style.css'
 	方法二:
 		1.定义state数据
 		2.有一个模板,对应react中render的jsx
-		3.把数据和模板相结合,生成真实DOM,渲染到页面
+		3.把数据和模板相结合,生成真实DOM, 渲染到页面
 		4.state改变
 		5.数据加模板结合,生成真实DOM,但并不替换原始DOM
 		6.新的DOM和原始DOM做对比,找差异
@@ -52,7 +52,7 @@ import './style.css'
 /*
 	虚拟DOM中的Diff算法
 		> 虚拟dom比对的方式就是Diff算法.
-		> 同级比较:从第一层开始比较,一直往下比较,直到不同,react就把不同的dom下面的所有虚拟dom全部删除掉,
+		> 同级比较: 从第一层开始比较, 一直往下比较, 直到不同, react就把不同的dom下面的所有虚拟dom全部删除掉
 		  重新生成一遍下面的dom.同层比对好处就是算法简单,这样比对速度快
 		> 所以循环需要key,这样虚拟dom比对时能知道谁是谁,节约性能,同时如果用index做key,虚拟dom渲染时,导致key不稳定,无法关联
 			
