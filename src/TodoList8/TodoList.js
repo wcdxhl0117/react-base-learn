@@ -43,7 +43,7 @@ class TodoList extends Component {
 	componentDidMount() {
 		/* charles：
 			1.Tools --> map Local... --> add
-			2.protocol:http - host:localhost - port:3000 - path:api/todolist - Local path:代理数据路径
+			2.protocol: http - host:localhost - port:3000 - path:api/todolist - Local path:代理数据路径
 			3.勾上Enable Map Local 和杠添加的代理路径
 		*/
 		axios.get('/api/todolist')

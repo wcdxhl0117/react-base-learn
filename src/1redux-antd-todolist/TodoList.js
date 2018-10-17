@@ -48,7 +48,7 @@ class TodoList extends Component {
 			type: 'change_input_value',
 			value: e.target.value
 		}
-		// 派发action给store,store会把action的信息转发给reducer,reducer来做具体事情
+		// 派发action给store, store会把action的信息转发给reducer, reducer来做具体事情
 		store.dispatch(action);
 	}
 
