@@ -15,8 +15,8 @@ class TodoList extends Component {
 		this.handleBtnClick = this.handleBtnClick.bind(this)
 		this.handleDeleteItem = this.handleDeleteItem.bind(this)
 	}
-  render() {
-    return (
+	render() {
+		return (
 			<Fragment>
 				<div>
 					<label htmlFor='inputLabel'>请输入内容</label>
@@ -36,7 +36,7 @@ class TodoList extends Component {
 					}
 				</ul>
 			</Fragment>
-    	)
+		)
 	}
 
 	// ajax请求，Charles数据模拟
@@ -47,13 +47,13 @@ class TodoList extends Component {
 			3.勾上Enable Map Local 和杠添加的代理路径
 		*/
 		axios.get('/api/todolist')
-      .then((response)=> {
+			.then((response) => {
 				console.log(response)
 				// 拿到数据，这里setState设置数据
 			})
-      .catch(function (error) {
-          console.log(error);
-      })
+			.catch(function (error) {
+				console.log(error);
+			})
 	}
 
 
