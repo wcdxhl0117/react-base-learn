@@ -30,7 +30,7 @@ class TodoList extends Component {
 						onClick={this.handleBtnClick.bind(this)}
 					>提交</button>
 				</div>
-				<ul>
+				<div>
 					{
 						// 数组的map方法
 						this.state.list.map((item, index) => {
@@ -52,7 +52,7 @@ class TodoList extends Component {
 							)
 						})
 					}
-				</ul>
+				</div>
 			</Fragment>
     )
 	}
