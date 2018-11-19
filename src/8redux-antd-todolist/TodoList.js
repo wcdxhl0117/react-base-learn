@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// 引入react-redux连接,就能通过connect方法获取到store里面的数据
+// 引入react-redux连接, 就能通过connect方法获取到store里面的数据
 import { connect } from 'react-redux';
 
 class TodoList extends Component {
