@@ -22,9 +22,12 @@ class Main extends Component{
 }
 
 class Title extends Component{
+	static contextTypes ={
+		color: PropTypes.string 
+	}
 	render() {
 		 return (
-			 <div>
+			 <div style={{color: this.context.color}}>
 				 这里是标题部分
 			 </div>
 		 )
@@ -32,9 +35,12 @@ class Title extends Component{
 }
  
 class Content extends Component{
+	static contextTypes ={
+		color: PropTypes.string 
+	}
 	render() {
 		 return (
-			 <div>
+			 <div style={{color: this.context.color}}>
 				 这里是内容部分
 			 </div>
 		 )
@@ -43,12 +49,17 @@ class Content extends Component{
  
 class HomePage extends Component { 
 	static childContextTypes = {
-		 color: PropTypes.string
+		color: PropTypes.string
 	}
 	constructor(props) {
 		super(props);
 		this.state ={
 			color: 'red'
+		}
+	}
+	getChildContext() {
+		return {
+			color: this.state.color
 		}
 	}
 	render() {
