@@ -12,6 +12,12 @@ let m2 = m1.set('a', '1111')
 console.log(m1.get('a'))
 console.log(m2.get('a'))
 
+// immuable的优势
+// 1.降低复杂度。把值传给其他组件不怕被更改了
+// 2.节约内存。因为会共享数据结构，不会做深拷贝，能共享就共享
+// 3.方便回溯（如撤销）。比如在redux中使用非常有用。
+
+
 class TodoItem extends Component { 
 	constructor(props) {
 		super(props)
