@@ -24,6 +24,8 @@ import './static/iconfont/iconfont.css';
 // 第9个,immuable.js学习
 // import TodoList from './TodoList9/immuable';
 // 第10个, 上下文
+// import TodoList from './TodoList10/context';
+// 第11个, 高阶组件 
 import TodoList from './TodoList10/context';
 
 
