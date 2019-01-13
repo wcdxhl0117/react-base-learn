@@ -26,7 +26,9 @@ import './static/iconfont/iconfont.css';
 // 第10个, 上下文
 // import TodoList from './TodoList10/context';
 // 第11个, 高阶组件 
-import TodoList from './TodoList10/context';
+// import TodoList from './TodoList11/context';
+// 第12个, 插槽 
+import TodoList from './TodoList12/portals';
 
 
 // redux,antd实现TodoList
