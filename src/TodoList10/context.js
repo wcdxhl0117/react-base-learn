@@ -36,12 +36,15 @@ class Title extends Component{
  
 class Content extends Component{
 	static contextTypes ={
-		color: PropTypes.string 
+		color: PropTypes.string,
+		setColor: PropTypes.func
 	}
 	render() {
 		 return (
 			 <div style={{color: this.context.color}}>
 				 这里是内容部分
+				 <button onClick={() => this.context.setColor('green')}>变为绿色</button>
+				 <button onClick={() => this.context.setColor('yellow')}>变为黄色</button>
 			 </div>
 		 )
 	} 
@@ -49,7 +52,8 @@ class Content extends Component{
  
 class HomePage extends Component { 
 	static childContextTypes = {
-		color: PropTypes.string
+		color: PropTypes.string,
+		setColor: PropTypes.func
 	}
 	constructor(props) {
 		super(props);
@@ -59,8 +63,13 @@ class HomePage extends Component {
 	}
 	getChildContext() {
 		return {
-			color: this.state.color
+			color: this.state.color,
+		 	setColor: this.setColor
 		}
+	}
+	 
+	setColor = (color) => {
+		this.setState({color})
 	}
 	render() {
 		return (
