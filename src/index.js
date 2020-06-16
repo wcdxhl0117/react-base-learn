@@ -6,7 +6,7 @@ import './static/iconfont/iconfont.css';
 // import TodoList from './animation/index';
 
 // 第1个,功能完整的版本
-// import TodoList from './TodoList1/TodoList';
+import TodoList from './TodoList1/TodoList';
 // 第2个,组件拆分的版本
 // import TodoList from './TodoList2_zujianchaifen/TodoList';
 // 第3个,代码优化
@@ -30,7 +30,7 @@ import './static/iconfont/iconfont.css';
 // 第12个, 插槽 
 // import TodoList from './TodoList12/portals';
 // 第13个, 路由
-import TodoList from './TodoList13/routerCom';
+// import TodoList from './TodoList13/routerCom';
 
 
 // redux,antd实现TodoList

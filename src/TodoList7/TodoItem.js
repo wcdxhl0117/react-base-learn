@@ -40,7 +40,7 @@ class TodoItem extends Component {
 		console.log('child:componentWillReceiveProps')
 	}
 
-	// componentWillReceiveProps: 组件即将从页面中剔除时, 会被执行
+	// componentWillUnmount: 组件即将从页面中剔除时, 会被执行
 	componentWillUnmount() {
 		console.log('child: componentWillUnmount')
 	}

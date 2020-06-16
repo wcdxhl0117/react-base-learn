@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import TodoItem from './TodoItem'
-//// 样式引入放最下面
+// 样式引入放最下面
 import './style.css'
 
 class TodoList extends Component {
@@ -10,7 +10,7 @@ class TodoList extends Component {
 			inputValue: '',
 			list: []
 		}
-		//// this绑定统一放到constructor里面,提升性能
+		// this绑定统一放到constructor里面,提升性能
 		this.handleInputChange = this.handleInputChange.bind(this)
 		this.handleBtnClick = this.handleBtnClick.bind(this)
 		this.handleDeleteItem = this.handleDeleteItem.bind(this)
@@ -46,7 +46,7 @@ class TodoList extends Component {
 						// 	)
 						// })
 
-						//// jsx里一般是页面需要显示的内容,这里map柔和一些逻辑,会使得jsx看上去很长,可以提出来,放到一个方法里面
+						// jsx里一般是页面需要显示的内容,这里map柔和一些逻辑,会使得jsx看上去很长,可以提出来,放到一个方法里面
 						this.getTodoItem()
 					}
 				</ul>
@@ -71,8 +71,8 @@ class TodoList extends Component {
 	handleInputChange(e) {
 		// console.log(e.target.value)
 		// console.log(this)
-		//// 新版改变state更推荐的方式,是返回一个函数; 甚至es6一个对象可以写一行,不要return了
-		//// 这种方式是异步的设置,所以需要对value做一个保存,再在setstate中使用就不会报错
+		// 新版改变state更推荐的方式,是返回一个函数; 甚至es6一个对象可以写一行,不要return了
+		// 这种方式是异步的设置,所以需要对value做一个保存,再在setstate中使用就不会报错
 		const value = e.target.value
 		this.setState(() => {
 			return {
@@ -85,7 +85,7 @@ class TodoList extends Component {
 	}
 	// 新增
 	handleBtnClick() {
-		//// state修改方式,注意setState接收一个参数是prevState,是修改数据之前一次的值
+		// state修改方式,注意setState接收一个参数是prevState,是修改数据之前一次的值
 		this.setState((prevState) => {
 			return {
 				list: [...prevState.list, prevState.inputValue],
@@ -93,7 +93,7 @@ class TodoList extends Component {
 			}
 		})
 		// this.setState({
-		// 	// es6的展开运算符，叼的一批
+		// 	// es6的展开运算符
 		// 	list: [...this.state.list, this.state.inputValue],
 		// 	// 添加之后，清空输入框内容
 		// 	inputValue: ''
